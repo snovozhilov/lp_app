@@ -1,15 +1,26 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
+#settings
+*settings.py
+*config.py
+
+#session
+*.session
+
+#db
+postgres/
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
 
+images_storage/
+
 # Environments
+.idea
 .env
 .venv
 env/
 venv/
-ENV/
-env.bak/
-venv.bak/
+
