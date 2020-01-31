@@ -1,6 +1,6 @@
 from flask import Flask
 
-from tg_parser.model import db
+from model import db
 
 
 def create_app():

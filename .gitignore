@@ -11,6 +11,9 @@ __pycache__/
 #db
 postgres/
 
+#jupyther
+*.ipynb
+
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt

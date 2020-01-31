@@ -7,7 +7,7 @@ from tg_parser import channels_to_parse as ctp
 from PIL import Image
 from telethon import TelegramClient, events
 from telethon.tl.types import InputMessagesFilterPhotos, MessageMediaPhoto
-from tg_parser.model import db, ParsedImages
+from model import db, ParsedImages
 
 client = TelegramClient('session_name', tg_config.API_ID, tg_config.API_HASH, proxy=(
     socks.SOCKS5, tg_config.PROXY_IP, tg_config.PORT, True, tg_config.PROXYUSERNAME, tg_config.PROXYUSERNAMEPASS))
@@ -16,6 +16,7 @@ client = TelegramClient('session_name', tg_config.API_ID, tg_config.API_HASH, pr
 now = dt.datetime.now()
 utcnow = dt.datetime.utcnow()
 
+#замени принты на логирование
 
 def get_phash(filename):
     try:
@@ -75,6 +76,8 @@ async def parse_chat(chat_id, chat_name, offset_date, chat_path):
 
 
 async def get_fresh_images():
+    """настраивае пути для сохр. картинок, для каждого чата запускает функцию parse_chat(), передавая в нее нужные
+    пути для сохранения """
     offset_date = dt.datetime.utcnow() - dt.timedelta(hours=ctp.hours_to_parse)
     basedir = os.path.abspath(os.path.dirname(__file__))
     images_storage_path = os.path.join(basedir, "..", "images_storage")
