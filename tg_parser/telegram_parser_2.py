@@ -5,9 +5,9 @@ import imagehash
 from tg_parser import tg_config
 from tg_parser import channels_to_parse as ctp
 from PIL import Image
-from telethon import TelegramClient, events
-from telethon.tl.types import InputMessagesFilterPhotos, MessageMediaPhoto
-from model import db, ParsedImages
+from telethon import TelegramClient
+from telethon.tl.types import InputMessagesFilterPhotos
+from sql_stuff.model import db, ParsedImages
 
 client = TelegramClient('session_name', tg_config.API_ID, tg_config.API_HASH, proxy=(
     socks.SOCKS5, tg_config.PROXY_IP, tg_config.PORT, True, tg_config.PROXYUSERNAME, tg_config.PROXYUSERNAMEPASS))

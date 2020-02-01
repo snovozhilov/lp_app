@@ -6,7 +6,7 @@ channels_to_parse = [
     #{"id": 234558922, "name": "me"},
 ]
 
-hours_to_parse = 3
+hours_to_parse = 30
 
 
 async def show_all_chats(client):

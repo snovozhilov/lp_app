@@ -1,4 +1,4 @@
-from tg_parser import create_app
+from sql_stuff import create_app
 from tg_parser.telegram_parser_2 import get_fresh_images, client
 
 

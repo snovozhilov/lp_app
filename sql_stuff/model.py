@@ -27,4 +27,15 @@ class UserRates(db.Model):
     dadd = db.Column(db.Date, nullable=False)
 
     def __repr__(self):
-        return '<UserRates {} {}>'.format(self.user_id, self.image_id, self.rate)
+        return '<UserRates {} {} {}>'.format(self.user_id, self.image_id, self.rate,)
+
+
+class Recommendations(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, nullable=False)
+    image_id = db.Column(db.Integer, nullable=False)
+    expected_rate = db.Column(db.Float, nullable=False)
+    dadd = db.Column(db.Date, nullable=False)
+
+    def __repr__(self):
+        return '<Recommendations {} {} {}>'.format(self.user_id, self.image_id, self.expected_rate,)
