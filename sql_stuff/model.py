@@ -32,8 +32,8 @@ class UserRates(db.Model):
 
 class Recommendations(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, nullable=False)
-    image_id = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.BigInteger, nullable=False)
+    image_id = db.Column(db.BigInteger, nullable=False)
     expected_rate = db.Column(db.Float, nullable=False)
     dadd = db.Column(db.Date, nullable=False)
 
